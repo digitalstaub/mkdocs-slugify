@@ -7,7 +7,7 @@ def slugify(value, separator):
     normalized = unicodedata.normalize('NFKD', value)
     v = normalized.strip().lower()
     # remove toc numbers
-    v = re.sub('^[]\d\.]+\s?\-?\s?', '', v)
+    v = re.sub('^[\d\.]+\s?\-?\s?', '', v)
     # print re.sub('[%s\s]+' % separator, separator, v)
 
     return re.sub('[%s\s]+' % separator, separator, v)
