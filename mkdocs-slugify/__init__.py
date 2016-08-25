@@ -1,6 +1,7 @@
 import re
 import unicodedata
 
+
 def slugify(value, separator):
 
     """ Slugify a string, to make it URL friendly. """
@@ -8,6 +9,8 @@ def slugify(value, separator):
     v = normalized.strip().lower()
     # remove toc numbers
     v = re.sub('^[\d\.]+\s?\-?\s?', '', v)
+    v = re.sub('[^a-z\-\s]', '', v)
+
     # print re.sub('[%s\s]+' % separator, separator, v)
 
     return re.sub('[%s\s]+' % separator, separator, v)
